@@ -42,7 +42,6 @@ Overall, Mamba was not universally the most accurate model, but it offered the
 strongest efficiency–scalability trade-off while remaining close to the best
 model in predictive performance and robustness.
 
-![Computational performance across sequence lengths](docs/figures/result/Computational_performance.png)
 
 ## Method at a glance
 
