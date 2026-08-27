@@ -43,7 +43,7 @@ strongest efficiency–scalability trade-off while remaining close to the best
 model in predictive performance and robustness.
 
 
-## Method at a glance
+## Method
 
 | Component | Purpose |
 | --- | --- |
