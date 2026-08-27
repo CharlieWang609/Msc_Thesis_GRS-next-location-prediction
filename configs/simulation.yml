@@ -1,0 +1,55 @@
+
+# True reading from db, false reading from data_dir
+database: False
+# True: use simulated data, False: use real data 
+simulated: True
+
+data_dir: "./data/simulation/input"
+loc_seq_file: "loc_seq.csv"
+locs_file: "locs.csv"
+
+# optionally input projected coordinate system for speed up calculation 
+proj_crs: "EPSG:2056" # None or "EPSG:2056" etc.
+
+
+# parameters from empirical distribution
+wait:
+  # could be lognormal, powerlaw or truncpowerlaw 
+  type: "lognormal"
+
+  # parameter for lognormal
+  mu: 0.75
+  sigma: 1.49
+
+  # parameter for both powerlaw (default 1.2) and truncpowerlaw (default 1.1)
+  alpha: 1.2
+
+  # parameters for truncpowerlaw
+  Lambda: 0.5
+
+jump:
+  # could be lognormal, powerlaw or truncpowerlaw 
+  type: "lognormal"
+
+  # parameter for lognormal
+  mu: 7.72
+  sigma: 2.38
+
+  # parameter for both powerlaw (default 1.2) and truncpowerlaw (default 1.1)
+  alpha: 1.2
+
+  # parameters for truncpowerlaw
+  Lambda: 0.5
+
+rho:
+  type: "normal"
+  mu: 0.64
+  sigma: 0.16
+
+gamma:
+  type: "normal"
+  mu: 0.18
+  sigma: 0.069
+
+# shall be within [0, 1]; change to non 0 value to perform hard interventions
+P: 0.0

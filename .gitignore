@@ -1,0 +1,61 @@
+# Local archive of the original thesis folder and nested Git repositories
+/archive/
+
+# Research data: keep the directory skeleton, ignore its contents
+/data/**/*
+!/data/**/
+!/data/README.md
+!/data/**/.gitkeep
+!/data/simulation/input/locs.csv
+!/data/simulation/input/loc_seq.csv
+
+# Generated experiments and artefacts
+/runs/**
+!/runs/README.md
+/outputs/**
+!/outputs/README.md
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.pickle
+
+# Local thesis binaries/source bundle
+*.pdf
+*.docx
+*.zip
+
+# Credentials and local environment files
+credentials.json
+*_sensitive.csv
+.env
+.env.*
+.venv/
+venv/
+env/
+
+# Python build and cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Jupyter and editor files
+.ipynb_checkpoints/
+.idea/
+.vscode/
+*.swp
+*~
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+*Zone.Identifier*

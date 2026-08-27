@@ -1,0 +1,91 @@
+misc:
+  # True: train 'networkName' NN with 'train_dataset' in 'data_save_root'
+  # False: use 'pretrain_file' NN to test data from 'inference_data_dir' in 'data_save_root'
+  training: True
+
+  data_save_root: ./data/prediction
+  run_save_root: ./runs
+  run_name: dtepr_mhsa_ce
+
+  # dataset name for training, shall be available in 'data_save_root'
+  train_dataset: dtepr
+  ## only used for inference
+  # dir containing all datasets for inference, shall be available in 'data_save_root'
+  inference_data_dir: inference
+  # dir containing the trained nn weights, shall be available in 'run_save_root'
+  pretrain_dir: dtepr_mhsa_demo
+
+  if_embed_time: True
+  if_embed_user: True
+  # total_location_num: 2918
+  # total_user_num: 1000
+  verbose: True
+  debug: False
+  batch_size: 256
+  print_step: 10
+  num_workers: 0
+
+embedding:
+  base_emb_size: 64
+
+# Loss function 
+loss:
+  loss_type: ce       # Options: "ce", "focal", "weighted_ce", "asl"
+  use_class_weights: False # General flag, applies if loss function supports it (CE, WeightedCE, Focal CB)
+  enable_weight_clipping: True 
+  weight_clip_min: 0.1       
+  weight_clip_max: 10.0
+
+  # Parameters for Focal Loss / ClassBalanceFocalLoss
+  gamma: 2.0            # Focal Loss gamma (also used by ASL if gamma_pos/neg not specified)
+  beta: 0.99          # ClassBalanceFocalLoss beta for effective number of samples
+
+  # Parameters for ASLSingleLabel
+  asl_gamma_pos: 2.0
+  asl_gamma_neg: 0.5   # Example: set to same as focal gamma if pos is 0
+  asl_clip: 0.05
+
+model:
+  networkName: mhsa  # model list["mamba", "mhsa", "rnn"]
+  fc_dropout: 0.1
+
+  # Mamba specific parameters
+  num_layers: 2           # Number of Mamba blocks
+  d_state: 16            # SSM state expansion factor
+  d_conv: 4              # Local convolution width
+  expand_factor: 2       # Expansion factor for inner dimension
+  #headdim: 16             
+
+  # only for mhsa
+  num_encoder_layers: 2
+  nhead: 8
+  dim_feedforward: 256
+  dropout: 0.1
+  
+  # only for LSTM
+  # whether include self-attention layer
+  attention: False
+  # LSTM or GRU
+  rnn_type: LSTM
+  hidden_size: 64
+
+optimiser:
+  # Adam or SGD or AdamW
+  optimizer: AdamW
+  max_epoch: 100
+  lr: 0.001
+  weight_decay: 0.0005
+  # for Adam
+  beta1: 0.5
+  beta2: 0.999
+  # for SGD
+  momentum: 0.98
+
+  # for warmup
+  num_warmup_epochs: 2
+  num_training_epochs: 50
+  # for decay
+  patience: 5
+  lr_step_size: 1
+  lr_gamma: 0.1
+  max_lr_decays: 2

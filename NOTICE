@@ -1,0 +1,13 @@
+Mamba Next-Location Prediction Thesis Code
+Copyright 2025 Changling Wang
+
+This product includes software adapted from the mobility-simulation,
+mobility-metrics, and next-location-prediction projects by Ye Hong and
+contributors, licensed under the Apache License, Version 2.0.
+
+Upstream projects:
+https://github.com/irmlma/mobility-simulation
+https://github.com/irmlma/mobility-metrics
+https://github.com/irmlma/next-location-prediction
+
+Separate copies of the upstream licence are retained in the licenses directory.

@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the thesis and this repository."
+title: "Is Mamba a Better Choice? Thesis Experiment Code"
+type: software
+authors:
+  - family-names: Wang
+    given-names: Changling
+version: 1.0.0
+date-released: 2025-09-23
+license: Apache-2.0
+preferred-citation:
+  type: thesis
+  title: "Is Mamba a Better Choice? A Study of Mamba-based Next Location Prediction Model"
+  authors:
+    - family-names: Wang
+      given-names: Changling
+  year: 2025
+  publisher: Wageningen University & Research
+  thesis-type: "MSc thesis"
