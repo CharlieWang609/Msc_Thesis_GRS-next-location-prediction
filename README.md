@@ -257,21 +257,7 @@ The thesis is catalogued by Wageningen University & Research:
 - [Is Mamba a better choice? A comparison of Mamba, MHSA, and LSTM neural
   networks for individual next-location prediction](https://library.wur.nl/WebQuery/groenekennis/2351405)
 
-## Citation
 
-If you use this repository, please cite the thesis. Machine-readable citation
-metadata are provided in [CITATION.cff](CITATION.cff).
-
-```bibtex
-@mastersthesis{wang2025mamba,
-  author  = {Changling Wang},
-  title   = {Is Mamba a Better Choice? A Comparison of Mamba, MHSA, and LSTM
-             Neural Networks for Individual Next-Location Prediction},
-  school  = {Wageningen University \& Research},
-  year    = {2025},
-  number  = {GIRS-2025-49}
-}
-```
 
 ## Acknowledgements
 
